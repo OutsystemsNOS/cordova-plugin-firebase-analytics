@@ -78,7 +78,8 @@ public class FirebaseAnalyticsPlugin extends ReflectiveCordovaPlugin {
 
     @CordovaMethod
     private void setDefaultEventParameters(JSONObject params, CallbackContext callbackContext) throws JSONException {
-        this.firebaseAnalytics.setDefaultEventParameters(parse(params));
+        //AChinita - Commented as we don't need it for our implementation
+        //this.firebaseAnalytics.setDefaultEventParameters(parse(params));
 
         callbackContext.success();
     }
