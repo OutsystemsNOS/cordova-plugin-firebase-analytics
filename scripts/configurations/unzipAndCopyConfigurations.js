@@ -64,10 +64,10 @@ module.exports = function(context) {
       var projectName = utils.getFilesFromPath(destPath).find(function (name) {
         return name.endsWith(".xcodeproj");                                                    
       }).replace(".xcodeproj","");
-      console.log("Name:" + projectName);
+
+      destPath = path.join(context.opts.projectRoot,"platforms",platform,projectName);
     }
     
-    console.log(context);
 
     if (utils.checkIfFolderExists(destPath)) {
       var destFilePath = path.join(destPath, fileName);
