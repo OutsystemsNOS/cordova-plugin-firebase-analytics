@@ -60,11 +60,11 @@ module.exports = function(context) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
     
     if (!utils.checkIfFolderExists(destPath) && platform == "ios") {
+      destPath = path.join(context.opts.projectRoot,"platforms",platform);
       var projectName = utils.getFilesFromPath(destPath).find(function () name {
         return name.endsWith(".xcodeproj");                                                    
       }).replace(".xcodeproj","");
-      console.log(projectName);
-      destPath = path.join(context.opts.projectRoot,"platforms",platform);
+      console.log("Name:" + projectName);
       utils. "Outsystems Test App"
     }
     
