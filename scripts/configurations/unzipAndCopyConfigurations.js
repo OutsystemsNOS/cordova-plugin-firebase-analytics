@@ -58,7 +58,15 @@ module.exports = function(context) {
   console.log('Copied ' + sourceFilePath + ' to ' + destFilePath);
   if (cordovaAbove7) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
-    if (!utils.checkIfFolderExists(destPath)) destPath = path.join(context.opts.projectRoot,"platforms",platform);
+    
+    if (!utils.checkIfFolderExists(destPath) && platform == "ios") {
+      var projectName = utils.getFilesFromPath(targetPath).find(function () name {
+        return name.endsWith(".xcodeproj");                                                    
+      }).replace(".xcodeproj","");
+      console.log(projectName);
+      destPath = path.join(context.opts.projectRoot,"platforms",platform);
+      utils. "Outsystems Test App"
+    }
     
     console.log(context);
 
