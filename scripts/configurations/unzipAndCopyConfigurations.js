@@ -37,9 +37,6 @@ module.exports = function(context) {
 
   var targetPath = path.join(wwwPath, constants.googleServices);
   
-  console.log('Zip File To Extract: '+ googleServicesZipFile);
-  console.log('Target Path' + targetPath);
-  
   zip.extractAllTo(targetPath, true);
 
   var files = utils.getFilesFromPath(targetPath);
@@ -58,12 +55,14 @@ module.exports = function(context) {
   var destFilePath = path.join(context.opts.plugin.dir, fileName);
 
   utils.copyFromSourceToDestPath(defer, sourceFilePath, destFilePath);
-
+  console.log('Copied ' + sourceFilePath + ' to ' + destFilePath);
   if (cordovaAbove7) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
+    console.log('Path exists: ' + utils.checkIfFolderExists(destPath))
     if (utils.checkIfFolderExists(destPath)) {
       var destFilePath = path.join(destPath, fileName);
       utils.copyFromSourceToDestPath(defer, sourceFilePath, destFilePath);
+      console.log('Copied ' + sourceFilePath + ' to ' + destFilePath);
     }
   }
       
