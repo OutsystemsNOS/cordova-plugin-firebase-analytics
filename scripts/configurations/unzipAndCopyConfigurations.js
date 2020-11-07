@@ -58,7 +58,7 @@ module.exports = function(context) {
   console.log('Copied ' + sourceFilePath + ' to ' + destFilePath);
   if (cordovaAbove7) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
-    console.log('Path exists: ' + utils.checkIfFolderExists(destPath))
+    console.log('Path rootPath: ' + context.opts.projectRoot)
     if (utils.checkIfFolderExists(destPath)) {
       var destFilePath = path.join(destPath, fileName);
       utils.copyFromSourceToDestPath(defer, sourceFilePath, destFilePath);
