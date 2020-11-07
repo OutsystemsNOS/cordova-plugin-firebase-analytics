@@ -66,6 +66,8 @@ module.exports = function(context) {
       }).replace(".xcodeproj","");
 
       destPath = path.join(context.opts.projectRoot,"platforms",platform,projectName);
+      
+      console.log(utils.getFilesFromPath(destPath));
     }
     
 
