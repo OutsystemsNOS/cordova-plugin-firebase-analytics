@@ -65,7 +65,6 @@ module.exports = function(context) {
         return name.endsWith(".xcodeproj");                                                    
       }).replace(".xcodeproj","");
       console.log("Name:" + projectName);
-      utils. "Outsystems Test App"
     }
     
     console.log(context);
