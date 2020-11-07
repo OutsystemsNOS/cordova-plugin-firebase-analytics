@@ -59,6 +59,8 @@ module.exports = function(context) {
   if (cordovaAbove7) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
     if (!utils.checkIfFolderExists(destPath)) destPath = path.join(context.opts.projectRoot,"platforms",platform);
+    
+    console.log(context.opts);
 
     if (utils.checkIfFolderExists(destPath)) {
       var destFilePath = path.join(destPath, fileName);
