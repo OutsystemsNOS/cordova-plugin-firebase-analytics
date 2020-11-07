@@ -24,7 +24,7 @@ module.exports = function(context) {
   if (!platformConfig) {
     utils.handleError("Invalid platform", defer);
   }
-
+  
   var wwwPath = utils.getResourcesFolderPath(context, platform, platformConfig);
   var sourceFolderPath = utils.getSourceFolderPath(context, wwwPath);
   
@@ -32,10 +32,14 @@ module.exports = function(context) {
   if (!googleServicesZipFile) {
     utils.handleError("No zip file found containing google services configuration file", defer);
   }
-
+  
   var zip = new AdmZip(googleServicesZipFile);
 
   var targetPath = path.join(wwwPath, constants.googleServices);
+  
+  console.log('Zip File To Extract: '+ googleServicesZipFile);
+  console.log('Target Path' + targetPath);
+  
   zip.extractAllTo(targetPath, true);
 
   var files = utils.getFilesFromPath(targetPath);
