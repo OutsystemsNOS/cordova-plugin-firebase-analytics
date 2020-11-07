@@ -60,7 +60,7 @@ module.exports = function(context) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
     
     if (!utils.checkIfFolderExists(destPath) && platform == "ios") {
-      var projectName = utils.getFilesFromPath(targetPath).find(function () name {
+      var projectName = utils.getFilesFromPath(destPath).find(function () name {
         return name.endsWith(".xcodeproj");                                                    
       }).replace(".xcodeproj","");
       console.log(projectName);
