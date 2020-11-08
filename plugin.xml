@@ -81,8 +81,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
                
         <resource-file src="google-services.json" target="./google-services.json" />
-        <resource-file src="src/android/cordova-plugin-firebase-strings.xml" target="res/values/cordova-plugin-firebase-strings.xml" />
-        <resource-file src="src/android/cordova-plugin-firebase-colors.xml" target="res/values/cordova-plugin-firebase-colors.xml" />
                
         <dependency id="cordova-support-android-plugin" version="~1.0.0" url="https://github.com/OutsystemsNOS/cordova-support-android-plugin"/>
         <dependency id="cordova-support-google-services" version="1.4.2" url="https://github.com/OutsystemsNOS/cordova-support-google-services"/>
